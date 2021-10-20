@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="text-success">
+ <%= flash[:notice] %>
+ </div>
   <div class="row">
       <!--画面右側-------------------------------------->
      <div class="col-lg-3">
@@ -10,14 +13,13 @@
       <div class="col-lg-9 mt-3">
         <h2>Book detail</h2>
           <table class="table">
-
               <tbody>
                <tr> 
                  <td><%= link_to user_path(@user.id) do %><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "attachment user profile_image fallback", fallback: "no_image.jpg" %><br><%= @user.name %><% end %></td>
-                 <td><%= link_to book_path(@book.id) do %><%= @book.title %><% end %></td>
+                 <td><%= link_to book_path(@book.id) do %><%= @book.title %><% end  %></td>
                  <td><%= @book.body %></td>
-                 <td><%= link_to "Edit", edit_book_path(@book.id) ,class: "btn btn-sm btn-success" %></td>
-                  <td><%= link_to "Destroy", book_path(@book.id) ,class: "btn btn-sm btn-danger",method: :delete, "data-confirm" => "本当に消しますか?" %></td>
+                 <td><% if @user.id == current_user.id %><%= link_to "Edit", edit_book_path(@book.id) ,class: "btn btn-sm btn-success" %><% end %></td>
+                  <td><% if @user.id == current_user.id %><%= link_to "Destroy", book_path(@book.id) ,class: "btn btn-sm btn-danger",method: :delete, "data-confirm" => "本当に消しますか?" %><% end %></td>
                </tr>
                
               </tbody>

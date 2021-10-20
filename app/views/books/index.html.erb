@@ -1,4 +1,16 @@
 <div class="container">
+  
+   <% if @book.errors.any? %>
+     <div class="text-danger">
+     <h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
+      <ul>
+      <% @book.errors.full_messages.each do |message| %>
+     <li><%= message %></li>
+      <% end %>
+      </ul>
+       </div>  
+   <% end %>
+   
   <div class="row">
       <!--画面右側-------------------------------------->
      <div class="col-lg-3">

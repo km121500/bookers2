@@ -2,11 +2,11 @@
   <dev class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h1>Editing Book</h1>
-              <% if @user.errors.any? %>
+              <% if @book.errors.any? %>
                 <div class="text-danger">
-                  <h2><%= @user.errors.count %>errors prohibited this book from being saved:</h2>
+                  <h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
                     <ul>
-                      <% @user.errors.full_messages.each do |message| %>
+                      <% @book.errors.full_messages.each do |message| %>
                         <li><%= message %></li>
                       <% end %>
                     </ul>
