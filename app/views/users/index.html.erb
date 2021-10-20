@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container px-5 px-sm-0">
 <div class="text-success">
  <%= flash[:notice] %>
  </div>
   <div class="row">
       <!--画面右側-------------------------------------->
-     <div class="col-lg-3">
+     <div class="col-md-3">
 
        <!--部分テンプレート-->
        <%= render 'books/list', book: @book , user: @user%>
@@ -12,7 +12,7 @@
       </div>
 
       <!--画面左側------------------------------------------>
-      <div class="col-lg-9 mt-3">
+      <div class="col-md-8 offset-md-1">
         <h2>Users</h2>
           <table class="table">
               <thead>

@@ -1,15 +1,15 @@
-<div class="container" style="height=100vh">  <!-- この行を追加 -->
+<div class="container px-5 px-sm-0">  <!-- この行を追加 -->
  <div class="text-success">
  <%= flash[:notice] %>
  </div>
   <div class="row">      <!-- この行を追加 -->
-      <div class="col-lg-3">
+      <div class="col-md-3">
       <!--部分テンプレート-->
       <%= render 'books/list', book: @book_new ,user: @user %>
       <!--部分テンプレート-->
       </div>
       
-      <div class="col-lg-9 mt-3">
+      <div class="col-md-8 offset-md-1">
         <h2>Books</h2>
       <table class="table">
           <thead>
