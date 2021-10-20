@@ -1,0 +1,38 @@
+
+        <h2 class="mt-3">User info</h2>
+        <table class="table">
+          <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', class:"exmaple-hoge", fallback: "no_image.jpg" %>
+          <tbody>
+          <tr></tr>
+          <tr>
+            <th>名前</th>
+            <th><%= user.name %></th>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <th><%= user.introduction %></th>
+          </tr>
+          </tbody>
+        </table>
+      <!--リンク-------------------------------------------------------------->
+
+        <div class="row">
+          <%= link_to '',edit_user_path(user.id) ,class: "btn btn-outline-secondary btn-block fas fa-user-cog " %>
+        </div>
+      <!--リンク-------------------------------------------------------------->
+        <h2 class="mt-3">Newbook</h2>
+
+        <%= form_with model:book, local:true do |f| %>
+
+           <div class="error_top">
+            <%= f.label :title ,class: "label" %>
+            <%= f.text_field :title, class: "form-control" %>
+           </div>
+
+           <div class="error_top">
+            <%= f.label :body ,class: "label" %>
+            <%= f.text_area :body ,class: "form-control"%>
+           </div>
+
+            <%= f.submit 'Create Book',class: "btn btn-success mt-3" %>
+        <% end %>

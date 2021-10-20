@@ -1,0 +1,37 @@
+<div class="container" style="height=100vh">  <!-- この行を追加 -->
+ <div class="text-success">
+ <%= flash[:notice] %>
+ </div>
+  <div class="row">      <!-- この行を追加 -->
+      <div class="col-lg-3">
+      <!--部分テンプレート-->
+      <%= render 'books/list', book: @book_new ,user: @user %>
+      <!--部分テンプレート-->
+      </div>
+      
+      <div class="col-lg-9 mt-3">
+        <h2>Books</h2>
+      <table class="table">
+          <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+          </tr>
+        </thead>
+        
+          <tbody>
+            <% @books.each do |book| %>
+           <tr>
+             <td><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class:"exmaple-hoge", fallback: "no_image.jpg" %></td>
+             <td><%= link_to book_path(book.id) do %><%= book.title %><% end %></td>
+             <td><%= book.body %></td>
+           </tr>
+           <% end %>
+
+          </tbody>
+
+      </table>
+      </div>
+  </div>  <!-- この行を追加 -->
+</div>    <!-- この行を追加 -->

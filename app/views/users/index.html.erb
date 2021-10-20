@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+      <!--画面右側-------------------------------------->
+     <div class="col-lg-3">
+
+       <!--部分テンプレート-->
+       <%= render 'books/list', book: @book , user: @user%>
+       <!--部分テンプレート-->
+      </div>
+
+      <!--画面左側------------------------------------------>
+      <div class="col-lg-9 mt-3">
+        <h2>Users</h2>
+          <table class="table">
+              <thead>
+              <tr>
+                <th>image</th>
+                <th>name</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+              <tbody>
+                <% @users.each do |user| %>
+               <tr>
+                 <td><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class:"exmaple-hoge", fallback: "no_image.jpg" %></td>
+                 <td><%= user.name %></td>
+                 <td><%= link_to "Show", user_path(user.id) %></td>
+               </tr>
+               <% end %>
+              </tbody>
+
+
+          </table>
+      </div>
+  </div>  <!-- この行を追加 -->
+</div>    <!-- この行を追加 -->
