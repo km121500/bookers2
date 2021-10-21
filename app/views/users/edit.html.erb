@@ -1,4 +1,4 @@
-  <div class="container"> 
+  <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
           <h2>User info</h2>
@@ -10,9 +10,9 @@
                         <li><%= message %></li>
                       <% end %>
                     </ul>
-                  </div>  
+                  </div>
               <% end %>
-              
+
             <%= form_with model:@user, local:true do |f| %>
             <!--名前-->
             <div class="form-group">
@@ -29,11 +29,11 @@
               <label for="inputImage">introduction</label>
               <%= f.text_area :introduction  ,class: "form-control introduction" %>
               </div>
-            <!--ボタン--> 
+            <!--ボタン-->
               <div class="form-group">
               <%= f.submit "Update User" ,class: "btn btn-secondary" %>
                </div>
             <% end %>
       </div>
     </div>
-  </div>   
+  </div>

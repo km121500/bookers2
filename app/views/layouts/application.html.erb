@@ -22,7 +22,7 @@
             <div class="navbar-collapse collapse show" id="navbarNavDropdown"  style>
               <ul class="navbar-nav ml-auto">
                  <li>
-                   <%= link_to "Home", user_path(@user.id) ,class: "fas fa-home nav-link text-light" %>
+                   <%= link_to "Home", user_path(current_user.id) ,class: "fas fa-home nav-link text-light" %>
                  </li>
                   <li>
                     <%= link_to 'Users', users_path ,class: "fas fa-users nav-link text-light" %>

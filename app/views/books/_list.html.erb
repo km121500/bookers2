@@ -16,8 +16,9 @@
         </table>
       <!--リンク-------------------------------------------------------------->
         <div class="row">
-          <%= link_to '',edit_user_path(user.id) ,class: "btn btn-outline-secondary btn-block fas fa-user-cog " %>
+          <%= link_to '',edit_user_path(user) ,class: "btn btn-outline-secondary btn-block fas fa-user-cog " %>
         </div>
+        
       <!--リンク-------------------------------------------------------------->
         <h2 class="mt-3">New book</h2>
 
@@ -29,7 +30,7 @@
            </div>
 
            <div class="error_top">
-            <%= f.label :body ,class: "label" %>
+            <%= f.label :opinion ,class: "label" %>
             <%= f.text_area :body ,class: "form-control"%>
            </div>
 
